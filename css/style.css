@@ -1,0 +1,135 @@
+:root {
+    --primary-color: #19529c;
+    --box-color: #fff;
+    --secondary-color: #61d4e8;
+    --border-color: #2da1e7;
+}
+* {
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+line-height: 1.2;
+overflow-x: hidden;
+padding-bottom: 3.50rem;
+background-color: var(--primary-color);
+
+
+}
+
+#main-header {
+    background-color: var(--secondary-color);
+    padding: 4rem 0;
+}
+#main-header .container {
+  
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+   
+}
+#main-header .container h1 {
+    font-size: 3rem; 
+}
+ 
+#timeline {
+    background-color: var(--primary-color);
+    padding: 4rem 0;
+
+  
+}
+/* create line */
+#timeline ul li {
+    list-style: none;
+    position: relative;
+    width: 6px;
+    background-color: #fff;
+    padding-top: 50px;
+    margin: 0 auto;
+}
+/* boxes */
+#timeline ul li div{
+background-color: var(--box-color);
+padding: 1rem;
+bottom: 0;
+position: relative;
+width: 400px;
+
+}
+/*right side */
+#timeline ul li:nth-child(odd) div {
+left: 40px;
+}
+/* left side */
+#timeline ul li:nth-child(even) div {
+left: -434px;
+}
+/* dots */
+#timeline ul li:after {
+content: "";
+position: absolute;
+width: 25px;
+height: 25px;
+background-color: var(--secondary-color) ;
+border: 5px solid var(--border-color);
+border-radius: 50%;
+bottom: 0;
+left: 50%;
+transform: translatex(-50%);
+}
+
+/* arrows */
+#timeline ul li div:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+     bottom: 5px;
+
+}
+/* right side arrows */
+#timeline ul li:nth-child(odd) div:before {
+    border-width: 8px 16px 8px 0;
+    border-color: transparent var(--box-color) transparent transparent;
+    left: -15px;
+}
+/* left side arrows */
+#timeline ul li:nth-child(even) div:before {
+    border-width: 8px 0 8px 16px;
+    border-color: transparent transparent transparent var(--box-color);
+    right: -15px;
+
+}
+
+@media screen and  (max-width: 900px) {
+    #timeline ul li div {
+        width: 250px;
+    }
+    #timeline ul li:nth-child(even) div {
+        left: -284px;
+
+    }
+}
+@media screen and (max-width: 600px) {
+    #timeline ul li {
+        margin: 0 20px;;
+    }
+    #timeline ul li div {
+        width: calc(100vw - 90px);
+    }
+    #timeline ul li:nth-child(even) div {
+        left: 40px;
+    }
+
+    #timeline ul li:nth-child(even) div:before {
+        border-width: 8px 16px 8px 0;
+        border-color: transparent var(--box-color) transparent transparent;
+        left: -15px;
+    }
+
+   }  
+
